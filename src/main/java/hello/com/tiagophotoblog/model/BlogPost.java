@@ -1,4 +1,4 @@
-package hello;
+package hello.com.tiagophotoblog.model;
 
 import org.springframework.data.annotation.Id;
 

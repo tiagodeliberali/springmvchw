@@ -1,5 +1,7 @@
-package hello;
+package hello.com.tiagophotoblog.controllers;
 
+import hello.com.tiagophotoblog.model.BlogPost;
+import hello.com.tiagophotoblog.repositories.BlogPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/stats")
-public class StatsController {
+@RequestMapping("/posts")
+public class PostsController {
 
     @Autowired
     private BlogPostRepository repository;
@@ -22,7 +24,7 @@ public class StatsController {
         List<BlogPost> postList = repository.findAll();
         model.addAttribute("postList", postList);
 
-        return "postList";
+        return "posts/postList";
     }
 
     @GetMapping("/{friendlyUrl}")
@@ -31,7 +33,7 @@ public class StatsController {
         BlogPost post = repository.findByFriendlyUrl(friendlyUrl);
         model.addAttribute("post", post);
 
-
-        return "getStats";
+        return "posts/post";
     }
+
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 <ul th:each="post: ${postList}">
-    <li><a th:text="${post.title}" th:href="'/stats/' + ${post.friendlyUrl}" /></li>
+    <li><a th:text="${post.title}" th:href="'/posts/' + ${post.friendlyUrl}" /></li>
 </ul>
 </body>
 </html>
